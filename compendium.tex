@@ -52,10 +52,10 @@
 	\end{center}
 
 	\subsection{Operationer}
-	Union: $ A \cup B = \{x : x \in A eller x \in B\} $\\
-	Snitt: $ A \cap B = \{x : x \in B och x \in A\} $\\
-	Symetrisk Differans: $ A \bigtriangleup B = \{x : x \in A eller x \in B, x \not\in A \cap B \} $\\
-	Differans: $ A \setminus B = \{x : x \in A och x \not\in B \} $\\
+	Union: $ A \cup B = \{x : x \in A \text{ eller } x \in B\} $\\
+	Snitt: $ A \cap B = \{x : x \in B \text{ och } x \in A\} $\\
+	Symetrisk Differans: $ A \bigtriangleup B = \{x : x \in A \text{ eller } x \in B, x \not\in A \cap B \} $\\
+	Differans: $ A \setminus B = \{x : x \in A \text{ och } x \not\in B \} $\\
 	Komplement: låt $ \upsilon $ vara grund mängden, där $ A \subset \upsilon $. Låt då $ \overline{A} = \upsilon \setminus A $\\
 	Karteisika Produkt: $A \times B = \{ (a, b) : a \in A, b \in B\} $\\
 	Potensmängden: $P(A)$ är alla delmängder till $A$. \\
@@ -86,11 +86,11 @@
 	Låt $A = \{a, b, c\}$ då följer: 
 	$$ P(A) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}\} $$
 
-	\subsection{Sats 1, Kordinaliteten av den kartesiska produkten}
+	\subsection{Sats 1, Kardinaliteten av den kartesiska produkten}
 	Låt $A \not= \emptyset, B \not= \emptyset$. Det medföjer då att:
 	$$ |A \times B| = |A| * |B| $$ 
 	Detta kan bevisas genom ett triviellt logiskt argument, nämligen att vi kombinerar alla element i $A$ med alla element i $B$. 
-	Detta leder till att vi för varje $a \in A$ får $|B|$ möjliga kombinationer. Och vi har $|A|$ antal $a$n, vilket ger oss $ |A| * |B| $ möjliga kombinationer. 
+	Detta leder till att vi för varje $a \in A$ får $|B|$ möjliga kombinationer. Och vi har $|A|$ st $a$, vilket ger oss $ |A| * |B| $ möjliga kombinationer. 
 	
 	\subsection{Sats 2, Kardinalitet efter union med två mägnder}
 	Låt $A, B$ vara två icke tomma mängder.
@@ -100,10 +100,10 @@
 	\subsection{Sats 3, Kardinalitet efter union med tre mängder}
 	Låt $A, B, C$ vara tre icke tomma mängder.
 	$$ |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| + |A \cap B \cap C| $$
-	Bevis för denna sats är också triviell, då man lätt kan övertyga sigsjälv med hjälp av ett simpelt venn diagram om de mängder man tar bort och lägger samman. 
+	Bevis för denna sats är också triviell, då man lätt kan övertyga sig själv med hjälp av ett venn diagram av de mängder man tar bort och lägger till. 
 
 	\subsection{Sats 4, Distrubutiva regeln}
-	Låt $A, B, C$ vara tre mägnder då gäller. 
+	Låt $A, B, C$ vara tre mängder, då gäller: 
 	$$ A \cap (B \cup C) = (A \cap B) \cup (A \cap C) $$
 	$$ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) $$
 	\newpage
