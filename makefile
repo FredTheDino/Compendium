@@ -1,0 +1,3 @@
+make:
+	pdflatex compendium.tex
+
