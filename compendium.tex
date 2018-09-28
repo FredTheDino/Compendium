@@ -9,12 +9,105 @@
 \title{Rekursion och Induktion}
 \author{Edvard Thörnros, Erik Mattfolk}
 
+\usepackage[a4paper, includeheadfoot, left=2cm, right=2cm, top=2cm]{geometry}
+
 \begin{document}
 	\maketitle
 	\newpage
 
 	\section{Mängder}
+	\subsection{Grundläggande definitioner}
+	En mängd är en sammling element, den behöver inte vara hetrogen eller sorterad. Men varje element kan endast förekomma en gång.
+	$$
+		A = \{ 1, 2, 3 \}
+		\quad
+		B = \{ a, b, c, d\}
+	$$
+	$$
+		C = \{x : x \in \mathbb{Z}_{+} \} 
+		\quad
+		D = \{ \{ 1 \}, 1\}
+	$$
 
+	$ A, B $ är mängder, $A$ är delmängd till $B$ om ALLA element i $A$ finns i $B$.
+	$$ A \subseteq B $$
+
+	$ A, B $ är mängder, $A$ är äkta delmängd till $B$ om ALLA element i $A$ finns i $B$. Och $A \not= B$
+	$$ A \subset B $$
+
+	$ A, B $ är mängder, $A$ är delmängd till $B$ om ALLA element i $A$ finns i $B$.
+	$$ A \subseteq B $$
+
+	$ (a, b) $ är ett ordnat par.
+
+	$$ (a, b) = (c, d) \to a = c, b = d $$
+	$$ (a, b) = (b, a) \to a \not= b $$
+
+	$A$ är en mängd. Kardinaliteten $|A|$ är antalet element som finns i $A$ om $A$ är en ändlig mängd, annars är den oändlig.
+
+	Om $A \cap B = \emptyset $ betyder det att $A$ och $B$ är disjunkta.
+	
+	\begin{center}
+		$P(A) = \{S, S \in A\}$
+	\end{center}
+
+	\subsection{Operationer}
+	Union: $ A \cup B = \{x : x \in A eller x \in B\} $\\
+	Snitt: $ A \cap B = \{x : x \in B och x \in A\} $\\
+	Symetrisk Differans: $ A \bigtriangleup B = \{x : x \in A eller x \in B, x \not\in A \cap B \} $\\
+	Differans: $ A \setminus B = \{x : x \in A och x \not\in B \} $\\
+	Komplement: låt $ \upsilon $ vara grund mängden, där $ A \subset \upsilon $. Låt då $ \overline{A} = \upsilon \setminus A $\\
+	Karteisika Produkt: $A \times B = \{ (a, b) : a \in A, b \in B\} $\\
+	Potensmängden: $P(A)$ är alla delmängder till $A$. \\
+
+	\subsection{Användbara Hälger}
+	Naturligatal $\mathbb{N} = \{0, 1, 2, 3, 4...\}$\\
+	Heltal $\mathbb{Z} = \{0, 1, -1, 2, -2, 3, -3...\}$\\
+	Posetiva heltal $\mathbb{Z}_{+} = \{1, 2, 3, 4, 5...\}$\\
+	Negative heltal $\mathbb{Z}_{-} = \{-1, -2, -3, -4, -5...\}$\\
+	Rationella $\mathbb{Q} = \{\frac{p}{q} : p \in \mathbb{Z}, q \in \mathbb{Z}_{+}\}$\\
+
+	Irattionella tal är alla tal som inte kan skrivas som ett bråk men som finns på den reela tallinjen. Här noteras settet som $\mathbb{P}$
+
+	Reela tal \( \mathbb{R} = \mathbb{Q} \cup \mathbb{P} \)
+
+	Tomma mängden $\emptyset = \{\}$
+
+	Låt $A = \{a, b\}, B = \{b, c\}, \upsilon = \{a, b, c, d\}$ då följer:
+
+	$$ A \cup B = \{a, b, c\} $$
+	$$ A \cap B = \{b\} $$
+	$$ A \bigtriangleup B = \{a, c\} $$
+	$$ A \setminus B = \{a\} $$
+	$$ \overline{A} = \{c, d\} $$
+	$$ |A| = 2 $$
+	$$ A \times B = \{(a, b), (a, c), (b, b), (b, c)\}$$
+
+	Låt $A = \{a, b, c\}$ då följer: 
+	$$ P(A) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}\} $$
+
+	\subsection{Sats 1, Kordinaliteten av den kartesiska produkten}
+	Låt $A \not= \emptyset, B \not= \emptyset$. Det medföjer då att:
+	$$ |A \times B| = |A| * |B| $$ 
+	Detta kan bevisas genom ett triviellt logiskt argument, nämligen att vi kombinerar alla element i $A$ med alla element i $B$. 
+	Detta leder till att vi för varje $a \in A$ får $|B|$ möjliga kombinationer. Och vi har $|A|$ antal $a$n, vilket ger oss $ |A| * |B| $ möjliga kombinationer. 
+	
+	\subsection{Sats 2, Kardinalitet efter union med två mägnder}
+	Låt $A, B$ vara två icke tomma mängder.
+	$$ |A \cup B| = |A| + |B| - |A \cap B| $$
+	Bevis för denna sats är triviell.
+	
+	\subsection{Sats 3, Kardinalitet efter union med tre mängder}
+	Låt $A, B, C$ vara tre icke tomma mängder.
+	$$ |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| + |A \cap B \cap C| $$
+	Bevis för denna sats är också triviell, då man lätt kan övertyga sigsjälv med hjälp av ett simpelt venn diagram om de mängder man tar bort och lägger samman. 
+
+	\subsection{Sats 4, Distrubutiva regeln}
+	Låt $A, B, C$ vara tre mägnder då gäller. 
+	$$ A \cap (B \cup C) = (A \cap B) \cup (A \cap C) $$
+	$$ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) $$
+	\newpage
+		
 	\section{Induktion}
 	\subsection{Induktionsprincipen}
 	Påstående \\ 
@@ -39,6 +132,21 @@
 	\underline{Slutsats:} \\
 	Påståendet stämmer enligt den Alternativa Induktionsprincipen \\
 	\section{Kombinatorik}
+	\subsection{Definitioner}
+	\subsubsection{Fakultet}
+	$$
+	\begin{cases}
+		n! = n * (n - 1)! & \text{for }n > 0\\    
+		n! = 1 & \text{for } n = 0\\
+	\end{cases}
+	$$
+	\subsubsection{Additionsprinciper}
+	Låt $A_1, A_2, A_3, \dots ,A_k$ vara parvis disjunkta alltså, $A_i \cap A_j = \emptyset$ då gäller att:
+	$$
+		|A_1 \cup A_2 \dots \cup A_k| = |A_1| + |A_2| + \dots |A_k|
+	$$
+	\subsubsection{Multiplicationsprincipen}
+
 
 	\section{Talteori}
 
