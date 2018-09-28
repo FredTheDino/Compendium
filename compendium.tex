@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -15,7 +16,28 @@
 	\section{Mängder}
 
 	\section{Induktion}
-
+	\subsection{Induktionsprincipen}
+	Påstående \\ 
+	Låt $P(n)$ vara ett påstående \\
+	\underline{Bassteg:} \\
+	Börja med att bevisa att påståendet är sant för $n = n_{0}$ \\
+	\underline{Antagande}: \\
+	Antag att påståendet gäller för något $k \geq n$ dvs. $P(k)$ \\
+	\underline{Induktionssteg}: \\
+	Visa med hjälp av antagandet att påståendet stämmer då $k = p + 1$ \\
+	\underline{Slutsats:} \\
+	Påståendet stämmer enligt Induktionsprincipen \\
+	\subsection{Alternativa Induktionsprincipen}
+	Påstående \\
+	Antag att $P(n)$ beskriver en rekursiv talföljd $a_{n}$ med 2 eller mer steg \\
+	\underline{Bassteg:} \\
+	Visa att påståendet stämmer för $n_{0}, ... , n_{1}$ \\
+	\underline{Antagande:} \\
+	Antag att påståendet stämmer för något $k \geq n_{1}$ Speciellt att $P(k-n_{1}), ... , P(k)$ stämmer \\
+	\underline{Induktionssteg:} \\
+	Visa med hjälp av antagandet att påståendet stämmer då $k = p + 1$ \\
+	\underline{Slutsats:} \\
+	Påståendet stämmer enligt den Alternativa Induktionsprincipen \\
 	\section{Kombinatorik}
 
 	\section{Talteori}
