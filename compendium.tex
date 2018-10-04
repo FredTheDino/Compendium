@@ -61,10 +61,10 @@
 	Potensmängden: $P(A)$ är alla delmängder till $A$. \\
 
 	\subsection{Användbara Hälger}
-	Naturligatal $\mathbb{N} = \{0, 1, 2, 3, 4...\}$\\
+	Naturliga tal $\mathbb{N} = \{0, 1, 2, 3, 4...\}$\\
 	Heltal $\mathbb{Z} = \{0, 1, -1, 2, -2, 3, -3...\}$\\
-	Posetiva heltal $\mathbb{Z}_{+} = \{1, 2, 3, 4, 5...\}$\\
-	Negative heltal $\mathbb{Z}_{-} = \{-1, -2, -3, -4, -5...\}$\\
+	Positiva heltal $\mathbb{Z}_{+} = \{1, 2, 3, 4, 5...\}$\\
+	Negativa heltal $\mathbb{Z}_{-} = \{-1, -2, -3, -4, -5...\}$\\
 	Rationella $\mathbb{Q} = \{\frac{p}{q} : p \in \mathbb{Z}, q \in \mathbb{Z}_{+}\}$\\
 
 	Irattionella tal är alla tal som inte kan skrivas som ett bråk men som finns på den reela tallinjen. Här noteras settet som $\mathbb{P}$
@@ -159,9 +159,31 @@
 	Detta betecknas	$a \equiv b \mod n$
 
 	\subsection{Räkneregler för kongruensräkninggng}
-	Låt $n \geq 2$ vara ett heltal. Antag att $a \equiv b \mod n$ och $c \equiv d \mod n$ \\
-	Då gäller
+	Låt $n \geq 2$ vara ett heltal. Antag att $a \equiv b \mod n$ och $c \equiv d \mod n$\\
+	Då gäller följande:\\
+	$$
+	\text{(1) } ta \equiv tb \mod n \text{ för varje } t \in \mathbb{Z} \\
+	$$$$
+	\text{(2) } a \pm c \equiv b \pm d \mod n \\
+	$$$$
+	\text{(3) } ac \equiv bd \mod n
+	$$$$
+	\text{(4) } a^{m} \equiv b^{m} \mod n
+	$$
 
+	\subsection{Linjära Kongruensekvationer}
+	Låt $a \in \mathbb{Z}_{+}$, $b \in \mathbb{Z}$, $n-1 \in \mathbb{Z}_{+}$ och låt $d = $ sgd($a, n$). \\
+	Då är ekvationen \\
+	$$
+	ax \equiv b \mod n
+	$$
+	lösbar om och endast om $d$ $|$ $b$ \\
+	Denna ekvation kan då lösas som en linjär diofantisk ekvation. \\
+	En variant på denna ekvation: \\
+	$$
+	ax \equiv 1 \mod n
+	$$
+	I denna ekvation kallas alla lösnignar $x \equiv x_{0} \mod n$ en multiplikativ invers till $a$ modulo $n$
 	\section{Grafer}
 
 \end{document}
