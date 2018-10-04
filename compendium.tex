@@ -9,6 +9,8 @@
 \title{Rekursion och Induktion}
 \author{Edvard Thörnros, Erik Mattfolk}
 
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+
 \usepackage[a4paper, includeheadfoot, left=2cm, right=2cm, top=2cm]{geometry}
 
 \begin{document}
@@ -60,7 +62,7 @@
 	Karteisika Produkt: $A \times B = \{ (a, b) : a \in A, b \in B\} $\\
 	Potensmängden: $P(A)$ är alla delmängder till $A$. \\
 
-	\subsection{Användbara Hälger}
+	\subsection{Användbara Mängder}
 	Naturligatal $\mathbb{N} = \{0, 1, 2, 3, 4...\}$\\
 	Heltal $\mathbb{Z} = \{0, 1, -1, 2, -2, 3, -3...\}$\\
 	Posetiva heltal $\mathbb{Z}_{+} = \{1, 2, 3, 4, 5...\}$\\
@@ -110,43 +112,90 @@
 		
 	\section{Induktion}
 	\subsection{Induktionsprincipen}
-	Påstående \\ 
-	Låt $P(n)$ vara ett påstående \\
-	\underline{Bassteg:} \\
+	% Påstående \\ 
+	Låt $P(n)$ vara ett påstående som vi vill bevisa\\
+	\textbf{\underline{Bassteg:}} \\
 	Börja med att bevisa att påståendet är sant för $n = n_{0}$ \\
-	\underline{Antagande}: \\
+	\textbf{\underline{Antagande:}}\\
 	Antag att påståendet gäller för något $k \geq n$ dvs. $P(k)$ \\
-	\underline{Induktionssteg}: \\
+	\textbf{\underline{Induktionssteg:}} \\
 	Visa med hjälp av antagandet att påståendet stämmer då $k = p + 1$ \\
-	\underline{Slutsats:} \\
+	\textbf{\underline{Slutsats:}} \\
 	Påståendet stämmer enligt Induktionsprincipen \\
 	\subsection{Alternativa Induktionsprincipen}
-	Påstående \\
-	Antag att $P(n)$ beskriver en rekursiv talföljd $a_{n}$ med 2 eller mer steg \\
-	\underline{Bassteg:} \\
-	Visa att påståendet stämmer för $n_{0}, ... , n_{1}$ \\
-	\underline{Antagande:} \\
-	Antag att påståendet stämmer för något $k \geq n_{1}$ Speciellt att $P(k-n_{1}), ... , P(k)$ stämmer \\
-	\underline{Induktionssteg:} \\
+	% Påstående \\
+	Antag att $P(n)$ beskriver en rekursiv talföljd $a_{n}$ med $b$ steg, men endast om $b > 1$. Ty annars är induktions principen ett bättre val.\\
+	\textbf{\underline{Bassteg}} \\
+	Visa att påståendet stämmer för $n_{0}, \dots , n_{b}$ \\
+	\textbf{\underline{Antagande:}} \\
+	Antag att påståendet stämmer för \underline{alla} $n = k \geq b$. Speciellt att $P(k-n_{1}), ... , P(k)$ stämmer \\
+	\textbf{\underline{Induktionssteg:}} \\
 	Visa med hjälp av antagandet att påståendet stämmer då $k = p + 1$ \\
-	\underline{Slutsats:} \\
+	\textbf{\underline{Slutsats:}} \\
 	Påståendet stämmer enligt den Alternativa Induktionsprincipen \\
+
 	\section{Kombinatorik}
-	\subsection{Definitioner}
-	\subsubsection{Fakultet}
+
+	\subsection{Additionsprinciper}
+	Låt $A_1, A_2, A_3, \dots ,A_k$ vara parvis disjunkta alltså, $A_i \cap A_j = \emptyset$ då gäller att:
+	$$
+		|A_1 \cup A_2 \dots \cup A_k| = |A_1| + |A_2| + \dots |A_k|
+	$$
+	\subsection{Multiplicationsprincipen}
+	Låt $A_1, A_2, \dots ,A_k$ vara icke-tomma och ändliga, $k \ge 2$. Då stämmer:
+	$$
+		|A_1 \times A_2 \times \dots \times A_k| = |A_1| * |A_2| * \times * |A_k|
+	$$
+
+	\subsection{Fakultet}
 	$$
 	\begin{cases}
 		n! = n * (n - 1)! & \text{for }n > 0\\    
 		n! = 1 & \text{for } n = 0\\
 	\end{cases}
 	$$
-	\subsubsection{Additionsprinciper}
-	Låt $A_1, A_2, A_3, \dots ,A_k$ vara parvis disjunkta alltså, $A_i \cap A_j = \emptyset$ då gäller att:
-	$$
-		|A_1 \cup A_2 \dots \cup A_k| = |A_1| + |A_2| + \dots |A_k|
-	$$
-	\subsubsection{Multiplicationsprincipen}
 
+	\subsection{Permutationer}
+	Låt $n, k \in \mathbb{Z}_+$, då blir $k$ element där ordning spelar roll av $n$ stycken.
+	$$
+		P(n, k) = \frac{n!}{(n - k)!}
+	$$
+
+	\subsection{Permuitationer med upprepning (Multinominalsatsen)}
+	Låt $n, k \in \mathbb{Z}_+$, då blir $k$ element där ordning spelar roll av $n$ stycken. Där det finns $n_i$ stycken av element index $i$. Då är antalet kombinationer.
+	$$
+		\frac{n!}{n_0!n_1!\dots n_i!}
+	$$
+		
+	\subsection{Över (Choose)}
+	Antalet kombinationer av storlek $k$ av $n$ olika objekt, $0 \le k \le n$, ges av
+	$$
+		{n \choose k} = \frac{P(n, k)}{k!} = \frac{n!}{k!(n - k)!}
+	$$
+
+	\subsection{Stacketproblem (Kombinationer med upprepningar)}
+	% TODO:
+	Antalet kombinationer med upprepningar av storlek $k$ bland $n$ givna objekt är lika med:
+	$$
+		{k + n - 1 \choose k} = {k + n - 1 \choose n - 1}
+	$$
+	Dessa problem är ekivalenta med att lösa en diofantiskekvation med $k$ stycken okända, alltså.
+	\begin{align*}
+		x_1 + x_2 + x_3 + x_4 &= 8\\
+		x_1 &\le 2\\
+		x_2, x_3 &\le 5\\
+		x_n &\ge 0
+	\end{align*}
+
+	\subsection{Lådprincipen}
+	Om $n$ element fördelas över $m$ lådor då $m < n$ kommer minst en låda att innehålla mer än ett föremål.
+
+	\subsection{Principen om inklusion och exklusion (P.I.E)}
+	\begin{align*}
+		|A_1 \cup A_2 \cup \dots \cup A_n| &= a_1 - a_2 + \dot + (-1)^{n-1}a_n\\
+		a_k &= \sum_{\{i_1, \dots , i_k\} \subseteq \{1, \dots, n\}} |A_{i_1} \cap \dots \cap A_{i_k}|
+	\end{align*}
+	Alltså, summera alla snitt av alla möjliga kombinationer av alla möjliga länger, där vi tar bort det om längden är udda och lägger till det om längden är jämn.
 
 	\section{Talteori}
 
